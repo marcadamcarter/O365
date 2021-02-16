@@ -13,5 +13,7 @@ Collection of PowerShell one-line commands to query AzureAD for specific user ac
 
 ### Usage
 + Replace <email_alias> with the email alias of the individual to search - e.g. "startswith(Mail, 'first.m.last.ptc')"
+
+### Notes
 + 'ForceChangePasswordNextLogin' = if set to true, the account is inactive
-+ 'AccountEnabled' = boolean (true/false)
++ 'AccountEnabled' = boolean (true/false)  
