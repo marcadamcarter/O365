@@ -4,7 +4,7 @@ Connect-AzureAD
 
 #The following PowerShell one-liner should query which ever environment you connect to (CVR or IL5).
 Get-AzureADUser -Filter "startswith(Mail,'<email_alias>')" | Select-Object AccountEnabled, Department, MailNickName, Mail, UserType
-#Note:  replace <email_alias> with the email alias of the individual to search - e.g. "startswith(Mail, 'first.m.last.ctr')"
+#Note:  replace <email_alias> with the email alias of the individual to search - e.g. "startswith(Mail, 'first.m.last.ptc')"
  
 <# 
 Alternatives to query multiple individuals -
