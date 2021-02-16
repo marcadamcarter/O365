@@ -16,5 +16,5 @@ $csv[0]
 # Should return first record from your CSV, similar to the following
 # mail
 # ----
-# first.m.last.ctr
+# first.m.last.ptc
 $csv | ForEach-Object { Get-AzureADUser -Filter "startswith(Mail,'$($_.mail)')" | Select-Object AccountEnabled, Department, MailNickName, Mail, UserType } | Out-GridView
