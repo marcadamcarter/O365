@@ -1,15 +1,15 @@
+# Log on to the computer with an account that has Administrator rights
 Install-Module -Name AzureAD
 Import-Module AzureAD
 Connect-AzureAD
 
-#The following PowerShell one-liner should query which ever environment you connect to (CVR or IL5).
-Get-AzureADUser -Filter "startswith(Mail,'<email_alias>')" | Select-Object AccountEnabled, Department, MailNickName, Mail, UserType
-#Note:  replace <email_alias> with the email alias of the individual to search - e.g. "startswith(Mail, 'first.m.last.ptc')"
+# Query single user
+Get-AzureADUser -Filter "startswith(Mail,'<email_alias>')" | Select-Object AccountEnabled, Department, MailNickName, Mail, UserType, @{l='ForceChangePasswordNextLogin';e={$_.PasswordProfile.ForceChangePasswordNextLogin}}
  
 <# 
-Alternatives to query multiple individuals -
-• Create a single-column CSV file containing the email alias (i.e. everything before the @ sign).
-• Execute the following (PowerShell cmdlets)
+Alternative: Query Multiple Users -
+• Create a single-column CSV file containing the email alias (i.e. 'email alias' is everything before the @ sign).
+• Import CSV and execute the Get-AzureADUser cmdlet against each record
 #>
 $csv = Import-Csv '<path-to-your-csv-file>'
 $csv[0] 
@@ -17,4 +17,4 @@ $csv[0]
 # mail
 # ----
 # first.m.last.ptc
-$csv | ForEach-Object { Get-AzureADUser -Filter "startswith(Mail,'$($_.mail)')" | Select-Object AccountEnabled, Department, MailNickName, Mail, UserType } | Out-GridView
+$csv | ForEach-Object { Get-AzureADUser -Filter "startswith(Mail,'$($_.mail)')" | Select-Object AccountEnabled, Department, MailNickName, Mail, UserType, @{l='ForceChangePasswordNextLogin';e={$_.PasswordProfile.ForceChangePasswordNextLogin}} } | Out-GridView
