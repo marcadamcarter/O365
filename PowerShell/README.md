@@ -1,4 +1,4 @@
-# O365 PowerShell Scripts
+# O365 PowerShell One-liners, Scripts and such
 
 ## Table of Contents
 + [Query O365 User Accounts.ps1](#QueryO365UserAccounts)
