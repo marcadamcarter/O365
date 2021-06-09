@@ -9,7 +9,7 @@ Collection of PowerShell one-line commands to query AzureAD for specific user ac
 
 ### Requires 
  + [Azure Active Directory PowerShell for Graph module](https://docs.microsoft.com/en-us/powershell/module/azuread/?view=azureadps-2.0#azuread)
- + An account with Administrator rights is required to install modules
+ + A local computer account with sufficient rights to load modules in a PowerShell session
 
 ### Usage
 + Note: Replace <email_alias> with the email alias of the individual to search - e.g. "startswith(Mail, 'first.m.last.ptc')"
