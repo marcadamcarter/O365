@@ -21,7 +21,7 @@ A collection of PowerShell one-line commands to query AzureAD, gather a specifie
 ```powershell
 $objID = Get-AzureADUser -Filter "startswith(Mail,'joe.p.user')" | Select-Object ObjectId
 ```
-![Demo console session](../Assets/GetTeamsMemberships.png)
+![Demo console session](../Assets/GetTeamsMemberships.png?raw=true)
 + One CSV file will be exported, to your Downloads folder, for each Team the specific user is a member of - i.e. `C:\Users\joe.user\Downloads\niffty network team bravo.csv`  
 \
 \
