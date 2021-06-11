@@ -4,7 +4,10 @@
 + [Get Microsoft Teams Memberships.ps1](#GetTeamsMemberships)
 + [Import Members into a Team.ps1](#ImportTeamMembers)
 + [Query O365 User Accounts.ps1](#QueryO365UserAccounts)
-
+\
+\
+\
+&nbsp;
 ## Get Microsoft Teams Memberships.ps1 <a name = "GetTeamsMemberships"></a>
 #### Description
 A collection of PowerShell one-line commands to query AzureAD, gather a specified user's Teams Memberships and export each Team's members into an individual comma separated value (CSV) file.
@@ -18,8 +21,12 @@ A collection of PowerShell one-line commands to query AzureAD, gather a specifie
 ```powershell
 $objID = Get-AzureADUser -Filter "startswith(Mail,'joe.p.user')" | Select-Object ObjectId
 ```
-+ One CSV file will be exported, to your Downloads folder, for each Team the specific user is a member of - i.e. `C:\Users\joe.user\Downloads\niffty network team bravo.csv`
-
+![Demo console session](../Assets/GetTeamsMemberships.png)
++ One CSV file will be exported, to your Downloads folder, for each Team the specific user is a member of - i.e. `C:\Users\joe.user\Downloads\niffty network team bravo.csv`  
+\
+\
+\
+&nbsp;
 ## Import Members into a Team.ps1 <a name = "ImportTeamMembers"></a>
 #### Description
 A collection of PowerShell one-line commands to search AzureAD for a Microsoft Team and import Team members from a comma separated value (CSV) file.
@@ -40,8 +47,10 @@ Get-AzureADGroup -Filter "startswith(DisplayName,'Niffty Group')"
 ```powershell
 $objID = Get-AzureADGroup -ObjectId <GUID> | Select-Object ObjectId
 ```
-
-
+\
+\
+\
+&nbsp;
 ## Query O365 User Accounts.ps1 <a name = "QueryO365UserAccounts"></a>
 #### Description
 Collection of PowerShell one-line commands to query AzureAD for specific user accounts.
